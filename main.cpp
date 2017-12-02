@@ -364,6 +364,13 @@ namespace Plugins
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
 			}
 
+			int GetArrayDataLength( int type, int id, int data )
+			{
+				static AMX_NATIVE Native = sampgdk::FindNative( "Streamer_GetArrayDataLength" );
+				if( Native != NULL ) return sampgdk::InvokeNative( Native, "iii", type, id, data );
+				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
+			}
+
 			int GetUpperBound( int type )
 			{
 				static AMX_NATIVE Native = sampgdk::FindNative( "Streamer_GetUpperBound" );
