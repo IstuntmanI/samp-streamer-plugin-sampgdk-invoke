@@ -28,7 +28,7 @@
 #define STREAMER_OBJECT_TYPE_DYNAMIC (2)
 
 #define STREAMER_MAX_TYPES (8)
-#define STREAMER_MAX_AREA_TYPES (5)
+#define STREAMER_MAX_AREA_TYPES (6)
 #define STREAMER_MAX_OBJECT_TYPES (3)
 
 #define INVALID_STREAMER_ID (0)
@@ -285,6 +285,7 @@ namespace Plugins
 			int CreatePolygon( const float points[ ], float minz, float maxz, int maxpoints, int worldid = -1, int interiorid = -1, int playerid = -1, int priority = 0 );
 			bool Destroy( int areaid );
 			bool IsValid( int areaid );
+			int GetType( int areaid );
 			int GetDynamicPolygonPoints( int areaid, float points[ ], int maxpoints );
 			int GetDynamicPolygonNumberPoints( int areaid );
 			bool IsPlayerIn( int playerid, int areaid, bool recheck = 0 );

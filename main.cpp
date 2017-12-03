@@ -921,6 +921,13 @@ namespace Plugins
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
 			}
 
+			int GetType( int areaid )
+			{
+				static AMX_NATIVE Native = sampgdk::FindNative( "GetDynamicAreaType" );
+				if( Native != NULL ) return sampgdk::InvokeNative( Native, "i", areaid );
+				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
+			}
+
 			int GetDynamicPolygonPoints( int areaid, float points[ ], int maxpoints )
 			{
 				static AMX_NATIVE Native = sampgdk::FindNative( "GetDynamicPolygonPoints" );
