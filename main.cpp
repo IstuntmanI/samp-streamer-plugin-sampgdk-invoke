@@ -639,7 +639,7 @@ namespace Plugins
 			{
 				static AMX_NATIVE Native = sampgdk::FindNative( "GetDynamicObjectMaterial" );
 
-				std::string function_format = std::string( "iiRA[" ) + std::to_string( maxtxdname ) + std::string( "]A[" ) + std::to_string( maxtexturename ) + std::string( "]Rii" );
+				std::string function_format = std::string( "iiRS[" ) + std::to_string( maxtxdname ) + std::string( "]S[" ) + std::to_string( maxtexturename ) + std::string( "]Rii" );
 				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, function_format.c_str( ), objectid, materialindex, modelid, txdname, texturename, materialcolor, maxtxdname, maxtexturename );
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
 			}
@@ -662,7 +662,7 @@ namespace Plugins
 			{
 				static AMX_NATIVE Native = sampgdk::FindNative( "GetDynamicObjectMaterialText" );
 
-				std::string function_format = std::string( "iiA[" ) + std::to_string( maxtext ) + std::string( "]RA[" ) + std::to_string( maxfontface ) + std::string( "]RRRRRii" );
+				std::string function_format = std::string( "iiS[" ) + std::to_string( maxtext ) + std::string( "]RS[" ) + std::to_string( maxfontface ) + std::string( "]RRRRRii" );
 				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, function_format.c_str( ), objectid, materialindex, text, materialsize, fontface, fontsize, bold, fontcolor, backcolor, textalignment, maxtext, maxfontface );
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
 			}
@@ -841,7 +841,7 @@ namespace Plugins
 			{
 				static AMX_NATIVE Native = sampgdk::FindNative( "GetDynamic3DTextLabelText" );
 
-				std::string function_format = std::string( "iA[" ) + std::to_string( maxtext ) + std::string( "]i" );
+				std::string function_format = std::string( "iS[" ) + std::to_string( maxtext ) + std::string( "]i" );
 				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, function_format.c_str( ), id, text, maxtext );
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
 			}
@@ -1125,17 +1125,8 @@ namespace Plugins
 			{
 				static AMX_NATIVE Native = sampgdk::FindNative( "GetDynamicActorAnimation" );
 
-				std::string function_format = std::string( "iA[" ) + std::to_string( maxanimlib ) + std::string( "]A[" ) + std::to_string( maxanimname ) + std::string( "]RRRRRRii" );
+				std::string function_format = std::string( "iS[" ) + std::to_string( maxanimlib ) + std::string( "]S[" ) + std::to_string( maxanimname ) + std::string( "]RRRRRRii" );
 				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, function_format.c_str( ), actorid, animlib, animname, fdelta, loop, lockx, locky, freeze, time, maxanimlib, maxanimname );
-				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
-			}
-
-			bool GetMaterial( int objectid, int materialindex, int * modelid, char txdname[ ], char texturename[ ], int * materialcolor, int maxtxdname, int maxtexturename )
-			{
-				static AMX_NATIVE Native = sampgdk::FindNative( "GetDynamicObjectMaterial" );
-
-				std::string function_format = std::string( "iiRA[" ) + std::to_string( maxtxdname ) + std::string( "]A[" ) + std::to_string( maxtexturename ) + std::string( "]Rii" );
-				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, function_format.c_str( ), objectid, materialindex, modelid, txdname, texturename, materialcolor, maxtxdname, maxtexturename );
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
 			}
 
