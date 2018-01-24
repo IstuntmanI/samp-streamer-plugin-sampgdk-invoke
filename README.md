@@ -19,7 +19,9 @@ Usage
 
 * To integrate it in your gamemode you may need to do small changes, such as changing sampGDK's include path or just renaming the `streamer` files.
 
-* You need to define Streamer Plugin's in your plugin, in `streamer.hpp` I provided only the declarations. See `callbacks.cpp` for an example of how to create their definitions.
+* You need to define Streamer Plugin's callbacks in your plugin, in `streamer.hpp` I provided only the declarations and in `streamer.cpp` they get called, but you have to see `callbacks.cpp` for an example of how to create their definitions.
+
+* Streamer Plugin-like callbacks are actually called in `streamer.cpp` under `OnPublicCall`. If you want the callbacks to be actually executed, you need to add `OnPublicCall` in your definition file, as shown in `streamer.def`, so the main callback will get imported.
 
 Additional Notes
 ----------------
