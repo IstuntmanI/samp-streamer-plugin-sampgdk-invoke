@@ -349,6 +349,6 @@ bool OnDynamicActorStreamIn( int actorid, int forplayerid );
 bool OnDynamicActorStreamOut( int actorid, int forplayerid );
 bool Streamer_OnItemStreamIn( int type, int id );
 bool Streamer_OnItemStreamOut( int type, int id );
-bool Streamer_OnPluginError( char error[ ] );
+bool Streamer_OnPluginError( const char error[ ] );
 
 #endif

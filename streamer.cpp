@@ -1244,6 +1244,19 @@ PLUGIN_EXPORT bool PLUGIN_CALL OnPublicCall( AMX * amx, const char * name, cell 
 	else if( lName == "OnDynamicActorStreamOut" ) { return OnDynamicActorStreamOut( static_cast< int >( params[ 1 ] ), static_cast< int >( params[ 2 ] ) ); } // ( int actorid, int forplayerid );
 	else if( lName == "Streamer_OnItemStreamIn" ) { return Streamer_OnItemStreamIn( static_cast< int >( params[ 1 ] ), static_cast< int >( params[ 2 ] ) ); } // ( int type, int id );
 	else if( lName == "Streamer_OnItemStreamOut" ) { return Streamer_OnItemStreamOut( static_cast< int >( params[ 1 ] ), static_cast< int >( params[ 2 ] ) ); } // ( int type, int id );
-	//else if( lName == "Streamer_OnPluginError" ) { } // ( const char error[ ] ) - can't be made afaik because I would need a length parameter to know error's size before I retrieve it with amx
+	else if( lName == "Streamer_OnPluginError" ) // ( const char error[ ] )
+	{
+		cell * lAddress = nullptr;
+		amx_GetAddr( amx, params[ 1 ], &lAddress );
+
+		int lLength = 0;
+		amx_StrLen( lAddress, &lLength );
+
+		std::string lString( lLength, ' ' );
+		amx_GetString( &lString[ 0 ], lAddress, 0, lLength + 1 );
+
+		return Streamer_OnPluginError( lString.c_str( ) );
+	}
+
 	return 1;
 }

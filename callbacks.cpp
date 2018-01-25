@@ -101,7 +101,7 @@ bool Streamer_OnItemStreamOut( int type, int id )
 	return 1;
 }
 
-bool Streamer_OnPluginError( char error[ ] ) // unused
+bool Streamer_OnPluginError( const char error[ ] )
 {
 	// your plugin's code
 	return 1;
