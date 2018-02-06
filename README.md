@@ -3,7 +3,7 @@ The code necessary to invoke [Incognito's Streamer Plugin](https://github.com/sa
 
 Requirements
 ------------
-- [Incognito's Streamer Plugin v2.9.2 or later](https://github.com/samp-incognito/samp-streamer-plugin). (using an older plugin will throw "`Function not discovered`" errors in the server console when using newer plugin functions, everything else will work fine).
+- [Incognito's Streamer Plugin v2.9.3 or later](https://github.com/samp-incognito/samp-streamer-plugin). (using an older plugin will throw "`Function not discovered`" errors in the server console when using newer plugin functions, everything else will work fine).
 - [Zeex's sampGDK Amalgamation](https://github.com/Zeex/sampgdk).
 - Preferably a compiler compatible with the C++14 standard.
 
