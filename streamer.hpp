@@ -198,7 +198,7 @@ namespace Plugins
 			int CountVisibleItems( int playerid, int type, int serverwide = 1 );
 			bool DestroyAllItems( int type, int serverwide = 1 );
 			int CountItems( int type, int serverwide = 1 );
-			int GetNearbyItems( float x, float y, float z, int type, int items[ ], int maxitems, float range = 300.0 );
+			int GetNearbyItems( float x, float y, float z, int type, int items[ ], int maxitems, float range = 300.0, int worldid = -1 );
 			int GetAllVisibleItems( int playerid, int type, int items[ ], int maxitems );
 			bool GetItemPos( int type, int id, float * x, float * y, float * z );
 			bool SetItemPos( int type, int id, float x, float y, float z );

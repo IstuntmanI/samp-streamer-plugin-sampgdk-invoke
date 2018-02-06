@@ -467,12 +467,12 @@ namespace Plugins
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), 0;
 			}
 
-			int GetNearbyItems( float x, float y, float z, int type, int items[ ], int maxitems, float range )
+			int GetNearbyItems( float x, float y, float z, int type, int items[ ], int maxitems, float range, int worldid )
 			{
 				static AMX_NATIVE Native = sampgdk::FindNative( "Streamer_GetNearbyItems" );
 
-				std::string function_format = std::string( "fffiA[" ) + std::to_string( maxitems ) + std::string( "]if" );
-				if( Native != NULL ) return sampgdk::InvokeNative( Native, function_format.c_str( ), x, y, z, type, items, maxitems, range );
+				std::string function_format = std::string( "fffiA[" ) + std::to_string( maxitems ) + std::string( "]ifi" );
+				if( Native != NULL ) return sampgdk::InvokeNative( Native, function_format.c_str( ), x, y, z, type, items, maxitems, range, worldid );
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), 0;
 			}
 
