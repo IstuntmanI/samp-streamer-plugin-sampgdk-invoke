@@ -181,7 +181,7 @@ namespace Plugins
 			bool IsInArrayData( int type, int id, int data, int value );
 			bool AppendArrayData( int type, int id, int data, int value );
 			bool RemoveArrayData( int type, int id, int data, int value );
-			bool GetArrayDataLength( int type, int id, int data );
+			int GetArrayDataLength( int type, int id, int data );
 			int GetUpperBound( int type );
 		};
 
