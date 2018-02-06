@@ -153,6 +153,7 @@ namespace Plugins
 			bool IsToggleItemCallbacks( int type, int id );
 			bool ToggleErrorCallback( bool toggle );
 			bool IsToggleErrorCallback( );
+			bool AmxUnloadDestroyItems( bool toggle );
 		};
 
 		namespace Updates

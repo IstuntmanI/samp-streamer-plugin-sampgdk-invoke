@@ -222,6 +222,13 @@ namespace Plugins
 				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, "" );
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
 			}
+
+			bool AmxUnloadDestroyItems( bool toggle )
+			{
+				static AMX_NATIVE Native = sampgdk::FindNative( "Streamer_AmxUnloadDestroyItems" );
+				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, "b", toggle );
+				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
+			}
 		};
 
 		namespace Updates
