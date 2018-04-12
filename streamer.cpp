@@ -346,7 +346,9 @@ namespace Plugins
 			bool SetArrayData( int type, int id, int data, const int src[ ], int maxsrc )
 			{
 				static AMX_NATIVE Native = sampgdk::FindNative( "Streamer_SetArrayData" );
-				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, "iiiai", type, id, data, src, maxsrc );
+
+				std::string function_format = std::string( "iiia[" ) + std::to_string( maxsrc ) + std::string( "]i" );
+				if( Native != NULL ) return !!sampgdk::InvokeNative( Native, function_format.c_str( ), type, id, data, src, maxsrc );
 				else return sampgdk::logprintf( "'" __FILE__ "' / '%s' - Function not discovered !", __func__ ), false;
 			}
 
